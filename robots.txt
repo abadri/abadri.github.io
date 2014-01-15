@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://abadri.github.io/sitemap.xml 
