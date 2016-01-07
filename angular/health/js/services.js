@@ -83,13 +83,13 @@ angular.module('app.services', ['app.config'])
     return service;
 }])
 
-.factory('PharmacyService', ['$http', 'baseUrl', function($http, baseUrl) {
+.factory('PrescriptionService', ['$http', 'baseUrl', function($http, baseUrl) {
 
-    function getAppointments(id) {
+    function getPrescriptions(id) {
         return $http.get(baseUrl + '/api/getPrescriptions/' + id).then(handleSuccess, handleError('Error getting user by id'));
     }
 
-    function setAppointments(id, appointments) {
+    function setPrescriptions(id, prescriptions) {
         $http.post(baseUrl + '/api/setPrescriptions', {
                 uid: id,
                 prescriptions: prescriptions
@@ -115,5 +115,39 @@ angular.module('app.services', ['app.config'])
     var service = {};
     service.getPrescriptions = getPrescriptions;
     service.setPrescriptions = setPrescriptions;
+    return service;
+}])
+.factory('ContactService', ['$http', 'baseUrl', function($http, baseUrl) {
+
+    function getContacts(id) {
+        return $http.get(baseUrl + '/api/getContacts/' + id).then(handleSuccess, handleError('Error getting user by id'));
+    }
+
+    function setContacts(id, contacts) {
+        $http.post(baseUrl + '/api/setContacts', {
+                uid: id,
+                contacts: contacts
+            })
+            .then(handleSuccess, handleError('Error getting user by id'));
+    }
+
+
+    // private functions
+    function handleSuccess(res) {
+        return res.data;
+    }
+
+    function handleError(error) {
+        return function() {
+            return {
+                success: false,
+                message: error
+            };
+        };
+    }
+
+    var service = {};
+    service.getContacts = getContacts;
+    service.setContacts = setContacts;
     return service;
 }]);

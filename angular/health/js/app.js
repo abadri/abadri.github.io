@@ -42,59 +42,81 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('dashboard', {
         url: '/dashboard',
         templateUrl: 'templates/dashboard.html',
-        controller: 'DashCtrl'
+        controller: 'DashCtrl',
+        resolve: {
+            appointmentInfo: function($rootScope, AppointmentService) {
+                return AppointmentService.getAppointments($rootScope.user.uid);
+            },
+            prescriptionInfo: function($rootScope, PrescriptionService) {
+                return PrescriptionService.getPrescriptions($rootScope.user.uid);
+            },
+            contactInfo: function($rootScope, ContactService) {
+                return ContactService.getContacts($rootScope.user.uid);
+            }
+        }
     })
 
     .state('appointments', {
         url: '/appointments',
         templateUrl: 'templates/appointments.html',
-        controller: 'AppointmentsCtrl'
+        controller: 'AppointmentsCtrl',
+        resolve: {
+            appointmentInfo: function($rootScope, AppointmentService) {
+                return AppointmentService.getAppointments($rootScope.user.uid);
+            }
+        }
     })
 
     .state('appointments.list', {
         url: '/list',
-        templateUrl: 'templates/appointments-list.html',
-        controller: 'AppointmentsCtrl'
+        templateUrl: 'templates/appointments-list.html'
     })
 
     .state('appointments.add', {
         url: '/add',
-        templateUrl: 'templates/add-appointments.html',
-        controller: 'AppointmntsCtrl'
+        templateUrl: 'templates/add-appointments.html'
     })
 
     .state('contacts', {
         url: '/contacts',
         templateUrl: 'templates/contacts.html',
-        controller: 'ContactsCtrl'
+        controller: 'ContactsCtrl',
+        resolve: {
+            contactInfo: function($rootScope, ContactService) {
+                return ContactService.getContacts($rootScope.user.uid);
+            }
+        }
     })
 
     .state('contacts.list', {
         url: '/list',
-        templateUrl: 'templates/contacts-list.html',
-        controller: 'ContactsCtrl'
+        templateUrl: 'templates/contacts-list.html'
     })
 
     .state('contacts.add', {
         url: '/add',
-        templateUrl: 'templates/contacts-add.html',
-        controller: 'ContactsCtrl'
+        templateUrl: 'templates/contacts-add.html'
     })
 
     .state('presciptions', {
             url: '/presciptions',
             templateUrl: 'templates/presciptions.html',
-            controller: 'PresciptionsCtrl'
+            controller: 'PresciptionsCtrl',
+            resolve: {
+
+                prescriptionInfo: function($rootScope, PrescriptionService) {
+                    return PrescriptionService.getPrescriptions($rootScope.user.uid);
+                }
+
+            }
         })
         .state('presciptions.list', {
             url: '/list',
-            templateUrl: 'templates/presciptions-list.html',
-            controller: 'PresciptionsCtrl'
+            templateUrl: 'templates/presciptions-list.html'
         })
         .state('presciptions.add', {
             url: '/add',
-            templateUrl: 'templates/presciptions-add.html',
-            controller: 'PresciptionsCtrl'
+            templateUrl: 'templates/presciptions-add.html'
         });
 
     // if none of the above states are matched, use this as the fallback

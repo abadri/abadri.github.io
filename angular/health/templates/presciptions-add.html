@@ -1,61 +1,62 @@
 <ion-header-bar class="bar bar-subheader bar-stable">
-    <button class="button button-small button-positive">Cancel</button>
+    <button class="button button-small button-positive" ui-sref="^.list">Cancel</button>
     <h1 class="title"> New Reminder</h1>
-    <button class="button button-small button-positive">Save</button>
 </ion-header-bar>
 <ion-content class="padding" margin="20px">
     <!-- class =row responsive-sm -->
     <div class="card">
         <div class="container">
+            <form novalidate class="simple-form">
             <div class="list">
                 <label class="item item-input">
-                    <input type="text" placeholder="Medicine Name" ng-required="true">
+                    <input type="text" placeholder="Medicine Name" ng-required="true" ng-model="drug.name">
                 </label>
                 <label class="item item-input">
-                    <input type="time" placeholder="-- : -- --">
+                    <input type="time" placeholder="-- : -- --" ng-model="drug.time">
                 </label>
                 <div class="row">
                     <div class="col">
                         <ul class="toggle-btn-group">
                             <li>
-                                <input type="checkbox" name="sun" id="sun" class="accessAid" />
+                                <input type="checkbox" name="sun" id="sun" class="accessAid" ng-model="drug.week"/>
                                 <label for="sun">Sun</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="mon" id="mon" />
+                                <input type="checkbox" name="mon" id="mon" ng-model="drug.week"/>
                                 <label for="mon">Mon</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="tue" id="tue" />
+                                <input type="checkbox" name="tue" id="tue" ng-model="drug.week"/>
                                 <label for="tue">Tue</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="wed" id="wed" />
+                                <input type="checkbox" name="wed" id="wed" ng-model="drug.week"/>
                                 <label for="wed">Wed</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="thu" id="thu" />
+                                <input type="checkbox" name="thu" id="thu" ng-model="drug.week"/>
                                 <label for="thu">Thu</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="fri" id="fri" />
+                                <input type="checkbox" name="fri" id="fri" ng-model="drug.week"/>
                                 <label for="fri">Fri</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="sat" id="sat" />
+                                <input type="checkbox" name="sat" id="sat"  ng-model="drug.week"/>
                                 <label for="sat">Sat</label>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <label class="item item-input">
-                    <input type="number" min="0" placeholder="Dosage">
+                    <input type="number" min="0" placeholder="Dosage" ng-model="drug.qty">
                 </label>
                 <div class="padding" style="margin-top:20px">
-                    <button class="button button-block button-positive">
+                    <button class="button button-block button-positive" ng-click="saveDrug(drug)">
                         Save
                     </button>
                 </div>
             </div>
+            </form>
         </div>
 </ion-content>

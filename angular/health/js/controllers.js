@@ -30,21 +30,36 @@ angular.module('app.controllers', [])
 }])
 
 .controller('DashCtrl', function($scope) {
-
-
-})
-
-.controller('AppointmentsCtrl', function($scope) {
-
+    
+    // $scope.appointmentInfo = appointmentInfo;
+    // $scope.prescriptionInfo = prescriptionInfo;
+    // $scope.contactInfo = contactInfo;
 
 })
 
-.controller('ContactsCtrl', function($scope) {
+.controller('AppointmentsCtrl', function($scope, appointmentInfo) {
+    $scope.appointmentInfo = appointmentInfo;
 
+    $scope.addAppointment = function(apt) {
+        console.log(apt);
+    };
 
 })
 
-.controller('PresciptionsCtrl', function($scope) {
+.controller('ContactsCtrl', function($scope, contactInfo) {
+    $scope.contactInfo = contactInfo;
 
+    $scope.saveContact = function(contact) {
+        console.log(contact);
+    };
+
+})
+
+.controller('PresciptionsCtrl', function($scope, prescriptionInfo) {
+    $scope.prescriptionInfo = prescriptionInfo;
+
+    $scope.saveDrug = function(drug) {
+        console.log(drug);
+    };
 
 });
