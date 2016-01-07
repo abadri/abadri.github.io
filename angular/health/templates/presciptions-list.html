@@ -1,0 +1,21 @@
+<ion-content class="padding">
+    <div class="card">
+        <div class="container">
+            <div class="list">
+                <div class="item" ng-repeat="drugs in drug">
+                    <div class="row">
+                        <div class="col">
+                            <img src="img/pill.png" width="50px">
+                        </div>
+                        <div class="col col-60">
+                            <p class="bigfont">{{drugs.name}}</p>
+                        </div>
+                        <div class="col">
+                            <p class="biggestfont padding"> {{drugs.dosage}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

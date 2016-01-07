@@ -1,0 +1,68 @@
+<!Doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>My Health</title>
+    <link rel="stylesheet" href="lib/ionic/css/ionic.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!--   This  will download and add angular-local-storage to our app libraries 
+ <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script> -->
+</head>
+
+<body>
+    <ion-pade>
+        <ion-header-bar class="bar bar-positive bar-header">
+            <button class="button icon ion-navicon"></button>
+            <h1 class="title">My Health</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <p class="padding bigfont">
+                Welcome {{name}}, to My Health.
+            </p>
+            <div class="card">
+                <div class="list">
+                    <div class="item">
+                        <span class="button button-positive button-block">Recent Called</span>
+                        <p>{{recentcaller.name}}</p>
+                        <p><b>{{recentcaller.number}}</b></p>
+                    </div>
+                    <div class="item">
+                        <span class="button button-positive button-block">Upcoming Medicine Reminder</span>
+                        <div class="row">
+                            <div class="col">
+                                <div>{{upcomingmedicine.name}}</div>
+                                <div>{{upcomingmedicine.dosage}}</div>
+                            </div>
+                            <div class="col">
+                                <div class="biggerfont">{{upcomingmedicine.time}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-text-wrap">
+                        <span class="button button-positive button-block">Upcoming Appointments</span>
+                        <div class="row">
+                            <div class="col">
+                                <div>{{upcomingappointment.hospitalName}}</div>
+                                <div>{{upcomingappointment.location}}</div>
+                            </div>
+                            <div class="col">
+                                <div>{{upcomingappointment.date}}</div>
+                                <div class="bigfont">{{upcomingappointment.time}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="bar bar-footer bar-stable">
+            <h6>Sparrow Mobiles</h6>
+        </ion-footer-bar>
+    </ion-pade>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

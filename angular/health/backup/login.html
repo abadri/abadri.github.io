@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+<head>
+<title>
+MyHealth
+</title>
+<link rel="stylesheet" href="lib/ionic/css/ionic.css"/>
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body>
+<ion-pade>
+<ion-header-bar class="bar bar-header bar-positive">
+<button class="button ion-navicon">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="#">My Health</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="contact">Contacts</a></li>
+      <li><a ui-sref="Medicine">Medicine</a></li>
+      <li><a ui-sref="Appointment">Appointment</a></li>
+    </ul>
+  </nav>
+</button>
+<h1 class="title">My Health</h1>
+</ion-header-bar>
+<ion-content class="padding">
+
+<div class="card" style="margin-top:50px">
+  <div class="container">
+  <div class="list">
+    <label class="item item-input">
+    <input type="text" placeholder="Phonenumber">
+    </label>
+      <label class="item item-input">
+        <input type="text" placeholder="PIN">
+      </label>
+    </div>
+  </div>
+</div>
+<div class="padding" style="margin-top:20px">
+<button class="button button-positive button-block" style="margin-top:50px">
+Login
+</button>
+</div>
+<div class="pull-left" style="margin-left:100Px">
+<a href="">Forgot PIN</a> or <a href="">Join Now!</a></div>
+</ion-content>
+<ion-footer-bar class="bar bar-footer bar-stable">
+<p>Sparrow Mobiles</p>
+</ion-footer-bar>
+</ion-pade>
+</body>
+</html>

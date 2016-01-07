@@ -1,0 +1,21 @@
+<ion-header-bar class="bar bar-stable bar-subheader">
+    <h2 class="title"> Contacts</h2>
+    <button class="button ion-plus button-positive"></button>
+</ion-header-bar>
+<ion-content class="padding">
+    <div class="card">
+        <div class="container">
+            <div class="list">
+                <div class="item item-avatar" ng-repeat="doctor in doc">
+                    <div class="item item-button-right">
+                        <h4>{{doctor.name}}</h4>
+                        <p>{{doctor.phonenumber}}</p>
+                        <button class="button button-positive">
+                            <i class="icon ion-ios-telephone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

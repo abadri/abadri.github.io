@@ -1,0 +1,39 @@
+<ion-content class="padding">
+    <p class="padding bigfont">
+        Welcome {{name}}, to My Health.
+    </p>
+    <div class="card">
+        <div class="list">
+            <div class="item" ui-sref="contacts.list">
+                <span class="button button-positive button-block" >Recent Called</span>
+                <p>{{recentcaller.name}}</p>
+                <p><b>{{recentcaller.number}}</b></p>
+            </div>
+            <div class="item" ui-sref="presciptions.list">
+                <span class="button button-positive button-block">Upcoming Medicine Reminder</span>
+                <div class="row">
+                    <div class="col">
+                        <div>{{upcomingmedicine.name}}</div>
+                        <div>{{upcomingmedicine.dosage}}</div>
+                    </div>
+                    <div class="col">
+                        <div class="biggerfont">{{upcomingmedicine.time}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-text-wrap" ui-sref="appointments.list">
+                <span class="button button-positive button-block">Upcoming Appointments</span>
+                <div class="row">
+                    <div class="col">
+                        <div>{{upcomingappointment.hospitalName}}</div>
+                        <div>{{upcomingappointment.location}}</div>
+                    </div>
+                    <div class="col">
+                        <div>{{upcomingappointment.date}}</div>
+                        <div class="bigfont">{{upcomingappointment.time}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

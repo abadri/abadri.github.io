@@ -1,0 +1,61 @@
+<ion-header-bar class="bar bar-subheader bar-stable">
+    <button class="button button-small button-positive">Cancel</button>
+    <h1 class="title"> New Reminder</h1>
+    <button class="button button-small button-positive">Save</button>
+</ion-header-bar>
+<ion-content class="padding" margin="20px">
+    <!-- class =row responsive-sm -->
+    <div class="card">
+        <div class="container">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="Medicine Name" ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <input type="time" placeholder="-- : -- --">
+                </label>
+                <div class="row">
+                    <div class="col">
+                        <ul class="toggle-btn-group">
+                            <li>
+                                <input type="checkbox" name="sun" id="sun" class="accessAid" />
+                                <label for="sun">Sun</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="mon" id="mon" />
+                                <label for="mon">Mon</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="tue" id="tue" />
+                                <label for="tue">Tue</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="wed" id="wed" />
+                                <label for="wed">Wed</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="thu" id="thu" />
+                                <label for="thu">Thu</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="fri" id="fri" />
+                                <label for="fri">Fri</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="sat" id="sat" />
+                                <label for="sat">Sat</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="item item-input">
+                    <input type="number" min="0" placeholder="Dosage">
+                </label>
+                <div class="padding" style="margin-top:20px">
+                    <button class="button button-block button-positive">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+</ion-content>
