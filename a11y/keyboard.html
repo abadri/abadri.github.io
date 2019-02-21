@@ -1,0 +1,122 @@
+<html lang="en">
+  <head>
+    <title>Demo for keyboard A11Y</title>
+    <style>
+      [role="link"] {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .pc {
+        height: 25em;
+        font-size: 13px;
+      }
+
+      .cc {
+        position: absolute;
+        height: 25em;
+        width: 750px;
+      }
+
+      .cc2 {
+        position: absolute;
+        left: 450px;
+        top: 10px;
+        height: 18em;
+        width: 200px;
+        padding: 4px;
+        border: dotted gray 1px;
+        background: #fff;
+      }
+
+      .fs2 {
+        position: absolute;
+        left: 10px;
+        top: 20em;
+        height: 3em;
+        width: 640px;
+        padding: 4px;
+        border: dotted gray 1px;
+        background: #fff;
+      }
+
+      .c2 {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 200px;
+        height: 18em;
+        padding: 4px;
+        border: dotted gray 1px;
+        background: #fff;
+      }
+
+      .atColumn2 {
+        position: absolute;
+        left: 230px;
+        top: 10px;
+        height: 18em;
+        width: 200px;
+        padding: 4px;
+        border: dotted gray 1px;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <span role="link" data-href="https://www.foo.com" id="test-link">foo.com</span>
+      </li>
+      <li>
+        <a href="https://www.bar.com">bar.com</a>
+      </li>
+    </ul>
+
+
+    <div class="pc">
+        <div class="cc">
+          <div class="cc2">
+            <p><strong>3. Classes:</strong></p>
+            <ul>
+              <li><a href="#">Web Accessibility Fundamentals</a></li>
+              <li><a href="#">HTML/CSS Accessibility</a></li>
+              <li><a href="#">Web Accessibility Testing</a></li>
+              <li><a href="#">and more!</a></li>
+            </ul>
+          </div>
+          <div class="fs2">
+            <p><strong>4. </strong><a href="#">Accessible design is good design.</a></p>
+          </div>
+          <div class="c2">
+            <p><strong>1. Disability Types:</strong></p>
+            <ul>
+              <li><a href="#">Visual</a></li>
+              <li><a href="#">Auditory</a></li>
+              <li><a href="#">Motor</a></li>
+              <li><a href="#">Cognitive</a></li>
+              <li><a href="#">Seizures</a></li>
+            </ul>
+          </div>
+          <div class="atColumn2">
+            <p><strong>2. Assistive Technologies: </strong></p>
+            <ul>
+              <li><a href="#">Screen readers</a></li>
+              <li><a href="#">Screen enlargers</a></li>
+              <li><a href="#">Mouth stick</a></li>
+              <li><a href="#">Eye-gaze tracking</a></li>
+              <li><a href="#">etc.</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('test-link').addEventListener('click', function(e) {
+            location.href  =  e.target.getAttribute('data-href');
+        });
+    </script>
+  </body>
+</html>

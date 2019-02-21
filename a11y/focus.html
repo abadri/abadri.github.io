@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <title>Demo for keyboard A11Y - No focus indicators</title>
+    <style>
+      .bad {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+   <h2>Bad example</h2>
+    <ul>
+      <li>
+        <a href="https://www.foo.com" class="bad">foo.com</a>
+      </li>
+      <li>
+        <a href="https://www.bar.com">bar.com</a>
+      </li>
+    </ul>
+
+    <form name="test">
+        <input type="radio" class="bad" id="one" name="gender"> <label for="one">Male</label>
+        <input type="radio" class="bad" id="two" name="gender"> <label for="two">Female</label>
+    </form>
+
+    <h2>Good example</h2>
+    <ul>
+      <li>
+        <a href="https://www.foo.com">foo.com</a>
+      </li>
+      <li>
+        <a href="https://www.bar.com">bar.com</a>
+      </li>
+    </ul>
+
+    <form name="test">
+        <input type="radio" id="one" name="gender"> <label for="one">Male</label>
+        <input type="radio" id="two" name="gender"> <label for="two">Female</label>
+    </form>
+  </body>
+</html>
